@@ -232,6 +232,12 @@ func (p *Payload) Custom(key string, val interface{}) *Payload {
 	return p
 }
 
+// UnsetCustom sets a custom key and value on the payload.
+func (p *Payload) UnsetCustom(key string) *Payload {
+	delete(p.content, key)
+	return p
+}
+
 // Alert dictionary
 
 // AlertTitle sets the aps alert title on the payload.
